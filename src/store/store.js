@@ -12,7 +12,8 @@ export default new Vuex.Store({
         },
 
         //Listao OEE
-        graficos: [],        
+        graficos: [],
+        resumos: [],        
             
         //filtroInicial: moment().subtract({months:3}).format('YYYY-MM-DD'),
         // data setada manualmente
@@ -38,6 +39,10 @@ export default new Vuex.Store({
         SET_FINAL(state, obj){
             state.filtroFinal = obj
         }, 
+
+        SET_RESUMOS(state, obj){
+            state.resumos = obj
+        }
     },
     
 })

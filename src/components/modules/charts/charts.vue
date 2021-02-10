@@ -11,6 +11,7 @@
             <b-col xl="2"></b-col>
             <b-col xl="8" md="12">                
                 <PieCarteira />
+                <Resumos />
             </b-col>
             <b-col xl="2"></b-col>
         </b-row>
@@ -18,6 +19,11 @@
         <b-row> 
             <b-col xl="2"></b-col>
             <b-col xl="8" md="12">
+                 
+                <br />
+                <h4 class="text-center" >Resumo geral</h4>
+                <b-table small hover striped outlined :items="$store.state.resumos"></b-table>
+      
                  
             </b-col>
             <b-col xl="2"></b-col>
@@ -40,10 +46,11 @@
     import filtroData from '../utils/filtroData'    
     import Loading from '../../template/Loading'
     import PieCarteira from './pieCarteira'
+    import Resumos from '../tabelas/resumo'
 
     export default {
         
-      components: { Loading, filtroData, PieCarteira }
+      components: { Loading, filtroData, PieCarteira, Resumos }
     
 }
 </script>
