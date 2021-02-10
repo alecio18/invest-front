@@ -32,7 +32,7 @@
         <b-row> 
             <b-col xl="2"></b-col>
             <b-col xl="8" md="12">
-                 
+                 <PieDivisao />
             </b-col>
             <b-col xl="2"></b-col>
         </b-row>
@@ -47,10 +47,11 @@
     import Loading from '../../template/Loading'
     import PieCarteira from './pieCarteira'
     import Resumos from '../tabelas/resumo'
+    import PieDivisao from '../charts/pieDivisaoCarteira'
 
     export default {
         
-      components: { Loading, filtroData, PieCarteira, Resumos }
+      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao }
     
 }
 </script>
