@@ -31,11 +31,15 @@
         
         <b-row> 
             <b-col xl="2"></b-col>
-            <b-col xl="8" md="12">
+            <b-col xl="4" md="12">
                  <PieDivisao />
+            </b-col>
+            <b-col xl="4" md="12">
+                <PieFiis />
             </b-col>
             <b-col xl="2"></b-col>
         </b-row>
+
 
     </div>
     </div>
@@ -48,10 +52,11 @@
     import PieCarteira from './pieCarteira'
     import Resumos from '../tabelas/resumo'
     import PieDivisao from '../charts/pieDivisaoCarteira'
+    import PieFiis from '../charts/pieFiis'
 
     export default {
         
-      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao }
+      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao, PieFiis }
     
 }
 </script>
