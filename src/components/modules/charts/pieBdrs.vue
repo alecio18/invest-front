@@ -1,5 +1,5 @@
 <template>
-    <div id="divisaoCarteira">
+    <div id="bdrspie">
         
     </div>
 </template>
@@ -12,7 +12,6 @@ import Highcharts from 'highcharts'
 import exportingInit from 'highcharts/modules/exporting'
 
 import padrao from 'highcharts/themes/grid-light'
-import _ from 'lodash'
 
 export default {
     
@@ -22,60 +21,24 @@ export default {
 
         dataSource() {
                            
-           let chart = this.$store.state.graficos 
+           let charts = this.$store.state.graficos 
 
-           
-
-            let charts = _.orderBy(chart, 'tipo')
-
-            
-            let serie = []
-            let rotativoLoopCharts =[]
-            let somaAcoes = 0
-            let tipo = ''            
-            let cont = 0
-            let contTotal = 1 
-            let x = 0
-            
+           let serie = []
+           let rotativoLoopCharts =[]
             Object.entries(charts).forEach(([,valor]) => { 
-                
-               if (cont == 0){
-                   tipo = (valor.tipo)
-               } 
-               if (tipo != valor.tipo){
-                
-                rotativoLoopCharts = {                                              
-                       'y' : somaAcoes,
-                       'name' : tipo,                                                                    
-                   }
-                serie.push(rotativoLoopCharts) 
-                rotativoLoopCharts = {}
-                somaAcoes = 0
-                cont = 0
-                tipo = valor.tipo
-               }            
+                if(valor.tipo == "BDR"){
 
-               if (tipo == valor.tipo){
-                   let y = String(valor.p_total).replace(',','.')
+                   let x = String(valor.p_total).replace(',','.')
 
-                   x = parseFloat(y)                   
-                   somaAcoes += x                  
-                   cont++
-               }
-                if (charts.length == contTotal){
+                   let y = parseFloat(x)
 
-                   rotativoLoopCharts = {
-                       'y' : somaAcoes,
-                       'name' : valor.tipo, 
+                    rotativoLoopCharts = {                                              
+                        'y' : y,
+                        'name' : valor.acao,                                                                    
                     }
-                  serie.push(rotativoLoopCharts)
-
-               }   
-
-               contTotal++
+                    serie.push(rotativoLoopCharts)  
+                }             
            }) 
-
-           serie           
 
            this.setup({ serie }) 
           
@@ -93,7 +56,7 @@ export default {
             
             padrao(Highcharts)
             
-            Highcharts.chart("divisaoCarteira", {
+            Highcharts.chart("bdrspie", {
 
                 credits: {
                      enabled: false
@@ -106,7 +69,7 @@ export default {
                     plotShadow: false,                   
                 },
                 title: {
-                    text: 'Divisão Carteira'
+                    text: 'BDRs'
                 },
                  tooltip: {
                     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +

@@ -40,6 +40,19 @@
             <b-col xl="2"></b-col>
         </b-row>
 
+        <b-row>             
+            <b-col xl="4" md="12">
+                 <PieAcoes />
+            </b-col>
+            <b-col xl="4" md="12">
+                 <PieSmall />
+            </b-col>
+            <b-col xl="4" md="12">
+                 <PieBdrs />
+            </b-col>
+        </b-row>
+
+
 
     </div>
     </div>
@@ -53,10 +66,13 @@
     import Resumos from '../tabelas/resumo'
     import PieDivisao from '../charts/pieDivisaoCarteira'
     import PieFiis from '../charts/pieFiis'
+    import PieAcoes from '../charts/pieAcoes'
+    import PieSmall from './pieSmall'
+    import PieBdrs from './pieBdrs'
 
     export default {
         
-      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao, PieFiis }
+      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao, PieFiis, PieAcoes, PieSmall, PieBdrs }
     
 }
 </script>
