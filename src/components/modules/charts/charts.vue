@@ -52,6 +52,18 @@
             </b-col>
         </b-row>
 
+         <b-row>             
+            <b-col xl="2" md="12">
+                 
+            </b-col>
+            <b-col xl="8" md="12">
+                 <ColumnAcoes />                 
+            </b-col>
+            <b-col xl="2" md="12">
+                 
+            </b-col>
+        </b-row>
+
 
 
     </div>
@@ -64,15 +76,16 @@
     import Loading from '../../template/Loading'
     import PieCarteira from './pieCarteira'
     import Resumos from '../tabelas/resumo'
-    import PieDivisao from '../charts/pieDivisaoCarteira'
-    import PieFiis from '../charts/pieFiis'
-    import PieAcoes from '../charts/pieAcoes'
+    import PieDivisao from './pieDivisaoCarteira'
+    import PieFiis from './pieFiis'
+    import PieAcoes from './pieAcoes'
     import PieSmall from './pieSmall'
     import PieBdrs from './pieBdrs'
+    import ColumnAcoes from './columnAcoes'
 
     export default {
         
-      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao, PieFiis, PieAcoes, PieSmall, PieBdrs }
+      components: { Loading, filtroData, PieCarteira, Resumos, PieDivisao, PieFiis, PieAcoes, PieSmall, PieBdrs, ColumnAcoes }
     
 }
 </script>
